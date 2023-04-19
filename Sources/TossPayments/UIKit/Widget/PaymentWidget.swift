@@ -83,6 +83,8 @@ public final class PaymentWidget: WKWebView, HandleURLResult {
         let configuration = WKWebViewConfiguration()
         super.init(frame: .zero, configuration: configuration)
         bindContentSize()
+        uiDelegate = self
+        navigationDelegate = self
     }
     
     public func renderPaymentMethods(amount: Double) {
